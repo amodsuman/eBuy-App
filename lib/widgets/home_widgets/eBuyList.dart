@@ -1,0 +1,68 @@
+import 'package:ebuy/models/ebuy.dart';
+import 'package:ebuy/widgets/home_widgets/eBuyImage.dart';
+import 'package:ebuy/widgets/themes.dart';
+import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
+
+class EBuyList extends StatelessWidget {
+  const EBuyList({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      shrinkWrap: true,
+      itemCount: EBuyModel.items.length,
+      itemBuilder: (context, index) {
+        final eBuy = EBuyModel.items[index];
+        return EBuyItem(eBuy: eBuy);
+      },
+    );
+  }
+}
+
+class EBuyItem extends StatelessWidget {
+  final Item eBuy;
+
+  const EBuyItem({Key? key, required this.eBuy})
+      : assert(eBuy != null),
+        super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return VxBox(
+      child: Row(
+        children: [
+          EBuyImage(
+            image: eBuy.image,
+          ),
+          Expanded(
+              child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              eBuy.name.text.lg.color(MyTheme.darkBluish).bold.make(),
+              eBuy.desc.text.color(Colors.grey).make(),
+              10.heightBox,
+              ButtonBar(
+                alignment: MainAxisAlignment.spaceBetween,
+                buttonPadding: EdgeInsets.zero,
+                children: [
+                  "\$${eBuy.price}".text.bold.xl.make(),
+                  ElevatedButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(MyTheme.darkBluish),
+                          shape: MaterialStateProperty.all(
+                            StadiumBorder(),
+                          )),
+                      child: "Buy".text.make())
+                ],
+              ).pOnly(right: 10.0)
+            ],
+          ))
+        ],
+      ),
+    ).white.rounded.square(150).make().py8();
+  }
+}

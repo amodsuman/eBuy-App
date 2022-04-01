@@ -107,7 +107,7 @@ class _LoginPageState extends State<LoginPage> {
         if (value!.isEmpty) {
           return "Password cannot be empty.";
         } else if (value.length < 6) {
-          return "Password length must be atleast 6.";
+          return "Password length must be at least 6.";
         }
         return null;
       },
@@ -116,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Material buildLoginButton(BuildContext context) {
     return Material(
-      color: Colors.deepPurple,
+      color: Colors.teal,
       borderRadius: BorderRadius.circular(changeButton ? 50 : 8),
       child: InkWell(
         onTap: () => moveToHome(context),
