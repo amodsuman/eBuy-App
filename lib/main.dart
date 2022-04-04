@@ -1,3 +1,4 @@
+import 'package:ebuy/screens/cart_page.dart';
 import 'package:ebuy/screens/home_page.dart';
 import 'package:ebuy/screens/login_page.dart';
 import 'package:ebuy/utilities/routes.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => HomePage(),
         MyRoutes.homeRoute: (context) => HomePage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
+        MyRoutes.cartRoute: (context) => CartPage(),
       },
     );
   }

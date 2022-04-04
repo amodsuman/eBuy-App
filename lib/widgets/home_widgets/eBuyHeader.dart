@@ -9,10 +9,7 @@ class EBuyHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         "eBuy App".text.xl5.bold.color(MyTheme.darkBluish).make(),
-        "Trending Products".text.bold.xl2.make(),
-        SizedBox(
-          height: 8.0,
-        ),
+        "Top Selling Products".text.bold.xl2.make(),
       ],
     );
   }

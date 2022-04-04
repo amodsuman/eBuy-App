@@ -27,7 +27,7 @@ class EBuyModel {
     Item(
         id: 4,
         name: "Galaxy S21 Ultra",
-        desc: "Samsung Galaxy S21 Ultra 2021 edition",
+        desc: "Samsung Galaxy S21 Ultra 2021 edition.",
         price: 1299,
         color: "#1c1c1c",
         image:

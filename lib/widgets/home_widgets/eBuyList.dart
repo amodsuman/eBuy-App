@@ -1,4 +1,5 @@
 import 'package:ebuy/models/ebuy.dart';
+import 'package:ebuy/screens/product_detail_page.dart';
 import 'package:ebuy/widgets/home_widgets/eBuyImage.dart';
 import 'package:ebuy/widgets/themes.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,15 @@ class EBuyList extends StatelessWidget {
       itemCount: EBuyModel.items.length,
       itemBuilder: (context, index) {
         final eBuy = EBuyModel.items[index];
-        return EBuyItem(eBuy: eBuy);
+        return InkWell(
+          child: EBuyItem(eBuy: eBuy),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ProductDetailPage(eBuy: eBuy),
+            ),
+          ),
+        );
       },
     );
   }
@@ -32,8 +41,11 @@ class EBuyItem extends StatelessWidget {
     return VxBox(
       child: Row(
         children: [
-          EBuyImage(
-            image: eBuy.image,
+          Hero(
+            tag: Key(eBuy.id.toString()),
+            child: EBuyImage(
+              image: eBuy.image,
+            ),
           ),
           Expanded(
               child: Column(
