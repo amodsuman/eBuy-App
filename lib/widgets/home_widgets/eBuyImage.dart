@@ -16,6 +16,7 @@ class EBuyImage extends StatelessWidget {
         .color(MyTheme.creamColor)
         .make()
         .p12()
-        .w40(context);
+        .w40(context)
+        .h40(context);
   }
 }

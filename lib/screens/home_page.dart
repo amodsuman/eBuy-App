@@ -3,7 +3,6 @@ import 'package:ebuy/utilities/routes.dart';
 import 'package:ebuy/widgets/home_widgets/eBuyHeader.dart';
 import 'package:ebuy/widgets/home_widgets/eBuyList.dart';
 import 'package:ebuy/widgets/themes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -17,7 +16,7 @@ class HomePage extends StatelessWidget {
           Navigator.pushNamed(context, MyRoutes.cartRoute);
         },
         backgroundColor: MyTheme.darkBluish,
-        child: Icon(CupertinoIcons.cart),
+        child: Icon(Icons.shopping_cart),
       ),
       body: SafeArea(
         child: Container(

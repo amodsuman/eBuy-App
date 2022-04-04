@@ -18,11 +18,22 @@ class ProductDetailPage extends StatelessWidget {
       ),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.8),
+              spreadRadius: 5,
+              blurRadius: 8,
+              offset: Offset(0, 7),
+            ),
+          ],
+        ),
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
           children: [
-            "\$${eBuy.price}".text.bold.xl2.red800.make(),
+            "\$${eBuy.price}".text.bold.xl2.red600.make(),
             ElevatedButton(
                     onPressed: () {},
                     style: ButtonStyle(
@@ -31,8 +42,8 @@ class ProductDetailPage extends StatelessWidget {
                         shape: MaterialStateProperty.all(
                           StadiumBorder(),
                         )),
-                    child: "Buy".text.make())
-                .wh(90, 40)
+                    child: "Add to Cart".text.make())
+                .wh(130, 40)
           ],
         ).p16(),
       ),
@@ -64,7 +75,7 @@ class ProductDetailPage extends StatelessWidget {
                             .text
                             .color(Colors.black87)
                             .make()
-                        .py16(),
+                            .py16(),
                       ],
                     ).pOnly(top: 64).px16(),
                   ),
