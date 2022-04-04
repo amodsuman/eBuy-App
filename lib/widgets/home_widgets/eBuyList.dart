@@ -52,7 +52,7 @@ class EBuyItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              eBuy.name.text.lg.color(MyTheme.darkBluish).bold.make(),
+              eBuy.name.text.lg.color(context.accentColor).bold.make(),
               eBuy.desc.text.color(Colors.grey).make(),
               10.heightBox,
               ButtonBar(
@@ -63,8 +63,8 @@ class EBuyItem extends StatelessWidget {
                   ElevatedButton(
                       onPressed: () {},
                       style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(MyTheme.darkBluish),
+                          backgroundColor: MaterialStateProperty.all(
+                              context.theme.buttonColor),
                           shape: MaterialStateProperty.all(
                             StadiumBorder(),
                           )),
@@ -75,6 +75,6 @@ class EBuyItem extends StatelessWidget {
           ))
         ],
       ),
-    ).white.rounded.square(150).make().py8();
+    ).color(context.cardColor).rounded.square(150).make().py8();
   }
 }
