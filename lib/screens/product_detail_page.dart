@@ -1,4 +1,5 @@
 import 'package:ebuy/models/ebuy.dart';
+import 'package:ebuy/widgets/home_widgets/add_to_cart.dart';
 import 'package:ebuy/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -34,16 +35,7 @@ class ProductDetailPage extends StatelessWidget {
           buttonPadding: EdgeInsets.zero,
           children: [
             "\$${eBuy.price}".text.bold.xl2.red600.make(),
-            ElevatedButton(
-                    onPressed: () {},
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(
-                            context.theme.buttonColor),
-                        shape: MaterialStateProperty.all(
-                          StadiumBorder(),
-                        )),
-                    child: "Add to Cart".text.make())
-                .wh(130, 40)
+            AddToCart(eBuy: eBuy).wh(130, 40)
           ],
         ).p16(),
       ),

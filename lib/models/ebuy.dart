@@ -1,4 +1,13 @@
 class EBuyModel {
+
+  //Get item by id
+  Item getById(int id) =>
+      items.firstWhere((element) => element.id == id, orElse: null);
+
+  //Get item by position
+  Item getByPosition(int pos) => items[pos];
+
+
   static final items = [
     Item(
         id: 1,

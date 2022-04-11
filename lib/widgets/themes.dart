@@ -41,7 +41,7 @@ class MyTheme {
           ),
           centerTitle: true,
           titleTextStyle: TextStyle(
-            color: Colors.black,
+            color: Colors.white,
             fontSize: 26,
             fontWeight: FontWeight.bold,
           ),

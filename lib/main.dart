@@ -1,12 +1,14 @@
+import 'package:ebuy/core/store.dart';
 import 'package:ebuy/screens/cart_page.dart';
 import 'package:ebuy/screens/home_page.dart';
 import 'package:ebuy/screens/login_page.dart';
 import 'package:ebuy/utilities/routes.dart';
 import 'package:ebuy/widgets/themes.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(VxState(store: MyStore(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
